@@ -19,3 +19,8 @@ build-backend = "uv_build"
 [tool.isort]
 profile = "black"
 skip_gitignore = true
+
+[tool.pyright]
+executionEnvironments = [{ root = "src" }]
+venvPath = "."
+venv = ".venv"
