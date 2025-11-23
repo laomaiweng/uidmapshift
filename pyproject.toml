@@ -1,0 +1,21 @@
+[project]
+name = "uidmapshift"
+version = "0.1.0"
+description = "A utility to shift UID/GID of file hierarchies"
+readme = "README.md"
+authors = [
+    { name = "quentin", email = "quentin@minster.io" }
+]
+requires-python = ">=3.13"
+dependencies = []
+
+[project.scripts]
+uidmapshift = "uidmapshift:main"
+
+[build-system]
+requires = ["uv_build>=0.9.4,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.isort]
+profile = "black"
+skip_gitignore = true
