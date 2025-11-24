@@ -3,6 +3,18 @@ revision = 3
 requires-python = ">=3.13"
 
 [[package]]
+name = "pylibacl"
+version = "0.7.3"
+source = { registry = "https://pypi.org/simple" }
+sdist = { url = "https://files.pythonhosted.org/packages/cd/9e/e23f907c8e2cdc721c3d87eddda0cedee2f7cd7edf22f8439cee67f48a03/pylibacl-0.7.3.tar.gz", hash = "sha256:9d9ffb580e0c582d5de598087f75f6940458b23810c615529143c61b172bf922", size = 49494, upload-time = "2025-07-12T18:29:46.853Z" }
+
+[[package]]
 name = "uidmapshift"
 version = "0.1.0"
 source = { editable = "." }
+dependencies = [
+    { name = "pylibacl" },
+]
+
+[package.metadata]
+requires-dist = [{ name = "pylibacl", specifier = ">=0.7.3" }]

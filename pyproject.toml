@@ -7,7 +7,9 @@ authors = [
     { name = "quentin", email = "quentin@minster.io" }
 ]
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "pylibacl>=0.7.3",
+]
 
 [project.scripts]
 uidmapshift = "uidmapshift:main"
