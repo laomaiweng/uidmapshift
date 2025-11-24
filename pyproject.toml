@@ -1,10 +1,10 @@
 [project]
 name = "uidmapshift"
 version = "0.1.0"
-description = "A utility to shift UID/GID of file hierarchies"
+description = "A utility to shift UID/GID of file hierarchies (with ACL support)"
 readme = "README.md"
 authors = [
-    { name = "quentin", email = "quentin@minster.io" }
+    { name = "Quentin Minster Picavet", email = "quentin@minster.io" }
 ]
 requires-python = ">=3.13"
 dependencies = [
