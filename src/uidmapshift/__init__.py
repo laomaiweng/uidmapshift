@@ -2,6 +2,7 @@ import argparse
 import dataclasses
 import sys
 
+from ._version import __version__
 from .shifter import Shifter, ShifterOptions
 
 
@@ -27,6 +28,9 @@ def _parse_offsets(s: str) -> tuple[int, int]:
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
         description="Shift UIDs/GIDs of a file hierarchy. For use in managing storage for LXC priv/unpriv containers."
+    )
+    parser.add_argument(
+        "-V", "--version", action="version", version=f"%(prog)s {__version__}"
     )
     parser.add_argument(
         "-e",
