@@ -85,6 +85,12 @@ def parse_args() -> argparse.Namespace:
         help="do not list the changes performed",
     )
     parser.add_argument(
+        "-S",
+        "--show-skips",
+        action="store_true",
+        help="list skipped files/directories (overridden by --quiet)",
+    )
+    parser.add_argument(
         "offset",
         type=_parse_offsets,
         metavar="uid_offset[:gid_offset]",
@@ -106,6 +112,7 @@ def main() -> None:
         shift_acl=not args.no_acl,
         dry_run=args.dry_run,
         quiet=args.quiet,
+        show_skips=args.show_skips,
     )
     shifter = Shifter(
         uid_offset,

@@ -14,6 +14,7 @@ class ShifterOptions:
     shift_acl: bool = True
     dry_run: bool = False
     quiet: bool = False
+    show_skips: bool = False
 
 
 @dataclass
@@ -103,7 +104,7 @@ class Shifter:
 
         if any(fnmatch.fnmatch(str(path), pat) for pat in self.exclude_paths):
             stats.skipped += 1
-            if not options.quiet:
+            if not options.quiet and options.show_skips:
                 suffix = "/" if is_dir else ""
                 print(f"{path}{suffix}: skip")
             return False
@@ -140,7 +141,7 @@ class Shifter:
 
             if new_uid == -1 and new_gid == -1 and not new_acl and not new_default_acl:
                 stats.skipped += 1
-                if not options.quiet:
+                if not options.quiet and options.show_skips:
                     suffix = "/" if is_dir else ""
                     print(f"{path}{suffix}: {uid}:{gid} skip")
                 return False
