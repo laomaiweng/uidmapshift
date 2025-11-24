@@ -10,7 +10,7 @@ sdist = { url = "https://files.pythonhosted.org/packages/cd/9e/e23f907c8e2cdc721
 
 [[package]]
 name = "uidmapshift"
-version = "0.1.0"
+version = "0.0.0"
 source = { editable = "." }
 dependencies = [
     { name = "pylibacl" },
