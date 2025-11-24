@@ -190,10 +190,8 @@ class Shifter:
     ) -> ShifterStats:
         stats = ShifterStats()
 
+        self.shift(Path(path), options, stats)
         for root, dirs, files in os.walk(path, followlinks=False):
-            if "root" == path:
-                continue
-
             for d in dirs:
                 self.shift(Path(root) / d, options, stats)
 
